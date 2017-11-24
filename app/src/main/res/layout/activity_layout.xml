@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/bgColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/va_spinner_result"
+        android:layout_width="wrap_content"
+        android:visibility="invisible"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/btn_admin_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="1dp"
+        android:onClick="onClick"
+        android:layout_alignParentBottom="true"
+        android:foregroundGravity="left|bottom"
+        android:src="@drawable/admin_panel_button" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="0dp"
+        map:uiCompass="false"
+        map:uiTiltGestures="true" />
+
+    <RelativeLayout
+        android:id="@+id/admin_panel"
+        android:layout_width="280dp"
+        android:layout_height="400dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:translationZ="22dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="1"
+            android:rowCount="8"
+            android:columnOrderPreserved="true"
+            android:rowOrderPreserved="true">
+
+            <ImageView
+                android:id="@+id/admin_header"
+                android:layout_width="290dp"
+                android:layout_height="100dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/admin_header"
+                android:layout_columnSpan="1"
+                android:scaleType="fitXY"
+                android:layout_rowSpan="1" />
+
+            <ImageView
+                android:id="@+id/admin_emergency"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/resume_driving"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/admin_gradual"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/admin_gradual"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/admin_pause"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/admin_pause"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/admin_max50"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/admin_max50"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/admin_max90"
+                android:layout_width="320dp"
+                android:layout_height="60dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/admin_max90"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+        </GridLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="830dp"
+        android:layout_height="115.5dp"
+        android:id="@+id/btm_nav_bar"
+        android:layout_alignParentBottom="true"
+        android:onClick="onClick"
+        android:layout_centerHorizontal="true">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="16"
+            android:rowCount="1"
+            android:layout_centerHorizontal="true"
+            android:columnOrderPreserved="true"
+            android:rowOrderPreserved="true">
+
+
+            <ImageView
+                android:id="@+id/btn_Car"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Start Recognizer"
+                android:layout_marginLeft="105dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/drive_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+
+            <ImageView
+                android:id="@+id/btn_hl_Car"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_drive_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_nearbyRestaurants"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/restaurant_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:scaleType="fitXY"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_hl_nearbyRestaurants"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_restaurant_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_Emergency"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/emergency_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_hl_Emergency"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_emergency_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_Voice"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/voice_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:scaleType="fitXY"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_hl_Voice"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_voice_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_Music"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/music_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:columnOrderPreserved="true"
+                android:scaleType="fitXY"
+                android:onClick="onClick"/>
+
+            <ImageView
+                android:id="@+id/btn_hl_Music"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_music_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_Video"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/video_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:columnOrderPreserved="true"
+                android:scaleType="fitXY"
+                android:onClick="onClick"/>
+
+            <ImageView
+                android:id="@+id/btn_hl_Video"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_video_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+            <ImageView
+                android:id="@+id/btn_Settings"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/settings_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:columnOrderPreserved="true"
+                android:scaleType="fitXY"
+                android:onClick="onClick"/>
+
+            <ImageView
+                android:id="@+id/btn_hl_Settings"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Start Recognizer"
+                android:src="@drawable/hl_settings_icon"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:visibility="gone"
+                android:onClick="onClick" />
+
+        </GridLayout>
+    </RelativeLayout>
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/master_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:orientation="horizontal"
+        tools:context="com.example.user.sueno.MapsActivity"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <GridLayout
+            android:id="@+id/horizontal_top_3col"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="1"
+            android:translationZ="2dp"
+            android:columnOrderPreserved="true">
+
+            <GridLayout
+                android:id="@+id/horizontal_top_left"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:columnOrderPreserved="true"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_top_mid"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:orientation="vertical"
+                android:columnOrderPreserved="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <GridLayout
+                    android:id="@+id/horizontal_top_mid_inner"
+                    android:layout_width="683px"
+                    android:layout_height="422px"
+                    android:layout_columnSpan="3"
+                    android:layout_rowSpan="3"
+                    android:orientation="vertical"
+                    android:columnOrderPreserved="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <RelativeLayout
+                        android:id="@+id/label_overlap"
+                        android:layout_columnSpan="3"
+                        android:layout_rowSpan="1"
+                        android:layout_marginTop="10dp"
+                        android:columnOrderPreserved="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+
+                        <ImageView
+                            android:id="@+id/drive"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/drive" />
+
+                        <ImageView
+                            android:id="@+id/reverse"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/reverse" />
+
+                        <ImageView
+                            android:id="@+id/stopping"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/stopping" />
+
+                        <ImageView
+                            android:id="@+id/neutral"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/neutral" />
+
+                        <ImageView
+                            android:id="@+id/parking"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/parking" />
+
+                        <ImageView
+                            android:id="@+id/stationary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="top"
+                            android:src="@drawable/stationary" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/label_overlap_mid"
+                        android:layout_columnSpan="3"
+                        android:layout_rowSpan="2"
+                        android:columnOrderPreserved="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp">
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_columnSpan="3"
+                            android:layout_rowSpan="2"
+                            android:columnOrderPreserved="true">
+
+                            <RelativeLayout
+                                android:layout_width="85dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_rowSpan="2"
+                                android:columnOrderPreserved="true">
+
+                                <ImageView
+                                    android:id="@+id/iv_weather_rainy"
+                                    android:layout_height="115dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_columnSpan="1"
+                                    android:layout_rowSpan="1"
+                                    android:columnOrderPreserved="true"
+                                    android:paddingBottom="50dp"
+                                    android:layout_marginTop="25dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="false"
+
+                                    android:src="@drawable/weather_icon" />
+
+                                <TextView
+                                    android:id="@+id/temperature"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80px"
+                                    android:layout_columnSpan="1"
+                                    android:layout_rowSpan="2"
+                                    android:columnOrderPreserved="true"
+                                    android:text="30°C"
+                                    android:textSize="22sp"
+                                    android:layout_marginBottom="30dp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentStart="true" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="170dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_rowSpan="1"
+                                android:columnOrderPreserved="true">
+
+                                <TextView
+                                    android:id="@+id/tv_driving_speed"
+                                    android:layout_width="180px"
+                                    android:layout_height="140dp"
+                                    android:text="0"
+                                    android:textSize="80sp"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:layout_centerHorizontal="true" />
+
+                                <TextView
+                                    android:id="@+id/km_per_hour"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_width="180px"
+                                    android:layout_height="80px"
+                                    android:text="km/h"
+                                    android:textSize="22sp"
+                                    android:textColor="@color/white"
+                                    android:textAlignment="center"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginLeft="0dp"
+                                    android:layout_marginBottom="30dp"/>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="85dp"
+                                android:layout_height="match_parent"
+                                android:layout_columnSpan="1"
+                                android:layout_rowSpan="1"
+                                android:columnOrderPreserved="true">
+
+                                <ImageView
+                                    android:id="@+id/speedlimit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingBottom="14dp"
+                                    android:src="@drawable/speedlimit" />
+
+                                <TextView
+                                    android:id="@+id/tv_max_speed"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:text="50"
+                                    android:textAlignment="center"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="42sp"
+                                    android:layout_marginBottom="20dp"
+                                    android:layout_alignParentBottom="true" />
+
+                            </RelativeLayout>
+
+                        </GridLayout>
+                    </RelativeLayout>
+                </GridLayout>
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_top_right"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+        </GridLayout>
+
+
+        <GridLayout
+            android:id="@+id/horizontal_mid_3col"
+            android:layout_columnSpan="3"
+            android:layout_rowSpan="1"
+            android:columnOrderPreserved="true">
+
+            <GridLayout
+                android:id="@+id/horizontal_mid_left"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:columnOrderPreserved="true"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_mid_mid"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <RelativeLayout android:layout_width="match_parent">
+                    <com.driving.self.sueno.sueno.DelayAutoCompleteTextView
+                        android:id="@+id/geo_autocomplete"
+                        android:imeOptions="actionDone"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:dropDownWidth="683px"
+                        android:dropDownHeight="50dp"
+                        android:layout_marginTop="10dp"
+                        android:inputType="text"
+                        android:textColor="@color/jetblack"
+                        android:background="@color/iconBg"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:hint="Enter your destination"
+                        android:translationZ="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <ImageView
+                        android:id="@+id/geo_autocomplete_clear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="map_list_header_txt"
+                        android:layout_gravity="center_vertical|end"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:translationZ="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="12dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_search_dest"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center|right"
+                        android:layout_marginLeft="290dp"
+                        android:translationZ="1dp"
+                        android:onClick="onClick"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/search" />
+
+                </RelativeLayout>
+
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_mid_right"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/horizontal_btm_3col"
+            android:layout_columnSpan="3"
+            android:translationZ="11dp"
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="180dp"
+            android:layout_marginRight="180dp"
+            android:layout_height="200dp"
+            android:layout_rowSpan="1">
+
+            <RelativeLayout
+                android:layout_columnSpan="3"
+                android:layout_rowSpan="1"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:translationZ="3dp"
+                android:layout_gravity="bottom"
+                android:layout_height="220dp">
+
+                <SeekBar
+                    android:id="@+id/sb_seekBar_top"
+                    android:maxHeight="10dp"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/car_model_side"
+                    android:progressDrawable="@drawable/progress"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="90dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:paddingStart="73dp"
+                    android:translationZ="4dp"
+                    android:paddingLeft="63dp"
+                    android:paddingEnd="73dp"
+                    android:layout_weight="1" />
+
+            </RelativeLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_btm_left"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:columnOrderPreserved="true"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_btm_mid"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+            <GridLayout
+                android:id="@+id/horizontal_btm_right"
+                android:layout_width="683px"
+                android:layout_height="422px"
+                android:layout_columnSpan="1"
+                android:layout_rowSpan="1"
+                android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </GridLayout>
+
+        </GridLayout>
+    </GridLayout>
+</RelativeLayout>
